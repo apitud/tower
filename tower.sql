@@ -11,7 +11,7 @@
  Target Server Version : 100432 (10.4.32-MariaDB)
  File Encoding         : 65001
 
- Date: 02/04/2026 07:11:57
+ Date: 06/04/2026 12:57:17
 */
 
 SET NAMES utf8mb4;
@@ -166,7 +166,7 @@ CREATE TABLE `photos`  (
   `date_created` datetime NULL DEFAULT NULL,
   `date_modified` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 198 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 209 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of photos
@@ -368,6 +368,16 @@ INSERT INTO `photos` VALUES (194, 'TGR292', '4', '1', 'siteTGR292_cat4_slot1.jpg
 INSERT INTO `photos` VALUES (195, 'TGR292', '6', '5', 'siteTGR292_cat6_slot5.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (196, 'TGR292', '6', '6', 'siteTGR292_cat6_slot6.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (197, 'TGR294', '8', '1', 'siteTGR294_cat8_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (198, 'JKB049', '2', '1', 'siteJKB049_cat2_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (199, 'JKB049', '2', '2', 'siteJKB049_cat2_slot2.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (200, 'JKB049', '2', '3', 'siteJKB049_cat2_slot3.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (201, 'TGR292', '7', '1', 'siteTGR292_cat7_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (202, 'TGR292', '8', '2', 'siteTGR292_cat8_slot2.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (203, 'TGR292', '8', '1', 'siteTGR292_cat8_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (204, 'TGR294', '8', '2', 'siteTGR294_cat8_slot2.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (205, 'TGR294', '7', '1', 'siteTGR294_cat7_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (207, 'TGR294', '9', '1', 'siteTGR294_cat9_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (208, 'TGR294', '9', '2', 'siteTGR294_cat9_slot2.jpg', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for report_cells
