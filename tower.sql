@@ -1,17 +1,17 @@
 /*
  Navicat Premium Dump SQL
 
- Source Server         : local3307
+ Source Server         : localhost
  Source Server Type    : MySQL
  Source Server Version : 100432 (10.4.32-MariaDB)
- Source Host           : localhost:3307
+ Source Host           : localhost:3306
  Source Schema         : tower
 
  Target Server Type    : MySQL
  Target Server Version : 100432 (10.4.32-MariaDB)
  File Encoding         : 65001
 
- Date: 06/04/2026 12:57:17
+ Date: 06/04/2026 17:45:52
 */
 
 SET NAMES utf8mb4;
@@ -166,7 +166,7 @@ CREATE TABLE `photos`  (
   `date_created` datetime NULL DEFAULT NULL,
   `date_modified` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 209 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 242 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of photos
@@ -213,9 +213,9 @@ INSERT INTO `photos` VALUES (39, 'SRG-04-300', '29', '1', 'siteSRG-04-300_cat29_
 INSERT INTO `photos` VALUES (40, 'SRG-04-300', '30', '1', 'siteSRG-04-300_cat30_slot1.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (41, 'SITU_SELA', '25', '1', 'siteSITU_SELA_cat25_slot1.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (42, 'SITU_SELA', '30', '1', 'siteSITU_SELA_cat30_slot1.jpg', NULL, NULL);
-INSERT INTO `photos` VALUES (43, 'SUKA_NEGARA_CIKUPA', '24', '1', 'siteSUKA_NEGARA_CIKUPA_cat24_slot1.jpg', NULL, NULL);
-INSERT INTO `photos` VALUES (44, 'SUKA_NEGARA_CIKUPA', '30', '1', 'siteSUKA_NEGARA_CIKUPA_cat30_slot1.jpg', NULL, NULL);
-INSERT INTO `photos` VALUES (45, 'SUKA_NEGARA_CIKUPA', '30', '2', 'siteSUKA_NEGARA_CIKUPA_cat30_slot2.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (43, '25IS11C0027', '24', '1', 'siteSUKA_NEGARA_CIKUPA_cat24_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (44, '25IS11C0027', '30', '1', 'siteSUKA_NEGARA_CIKUPA_cat30_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (45, '25IS11C0027', '30', '2', 'siteSUKA_NEGARA_CIKUPA_cat30_slot2.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (46, 'SUKA_BAKTI', '27', '1', 'siteSUKA_BAKTI_cat27_slot1.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (47, 'SUKA_BAKTI', '28', '1', 'siteSUKA_BAKTI_cat28_slot1.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (48, 'SUKA_BAKTI', '28', '2', 'siteSUKA_BAKTI_cat28_slot2.jpg', NULL, NULL);
@@ -247,8 +247,8 @@ INSERT INTO `photos` VALUES (73, 'NAROGONG', '29', '1', 'siteNAROGONG_cat29_slot
 INSERT INTO `photos` VALUES (74, 'NAROGONG', '30', '1', 'siteNAROGONG_cat30_slot1.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (75, 'NAROGONG', '27', '1', 'siteNAROGONG_cat27_slot1.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (76, 'NAROGONG', '30', '2', 'siteNAROGONG_cat30_slot2.jpg', NULL, NULL);
-INSERT INTO `photos` VALUES (77, 'PADEPOKAN_MACAN', '27', '1', 'sitePADEPOKAN_MACAN_cat27_slot1.jpg', NULL, NULL);
-INSERT INTO `photos` VALUES (78, 'PADEPOKAN_MACAN', '30', '1', 'sitePADEPOKAN_MACAN_cat30_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (77, '25IS11C0028', '27', '1', 'sitePADEPOKAN_MACAN_cat27_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (78, '25IS11C0028', '30', '1', 'sitePADEPOKAN_MACAN_cat30_slot1.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (79, 'PEJUANG_MEDAN_SATRIA_MT', '27', '1', 'sitePEJUANG_MEDAN_SATRIA_MT_cat27_slot1.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (80, 'PEJUANG_MEDAN_SATRIA_MT', '29', '1', 'sitePEJUANG_MEDAN_SATRIA_MT_cat29_slot1.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (81, 'BOJONG_NANGKA', '27', '1', 'siteBOJONG_NANGKA_cat27_slot1.jpg', NULL, NULL);
@@ -284,11 +284,11 @@ INSERT INTO `photos` VALUES (110, 'GARUDA_MUDA', '30', '8', 'siteGARUDA_MUDA_cat
 INSERT INTO `photos` VALUES (111, 'GARUDA_MUDA', '30', '9', 'siteGARUDA_MUDA_cat30_slot9.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (112, 'GARUDA_MUDA', '30', '10', 'siteGARUDA_MUDA_cat30_slot10.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (113, 'GARUDA_MUDA', '30', '5', 'siteGARUDA_MUDA_cat30_slot5.jpg', NULL, NULL);
-INSERT INTO `photos` VALUES (114, 'WARU_CIATER', '24', '1', 'siteWARU_CIATER_cat24_slot1.jpg', NULL, NULL);
-INSERT INTO `photos` VALUES (115, 'WARU_CIATER', '29', '1', 'siteWARU_CIATER_cat29_slot1.jpg', NULL, NULL);
-INSERT INTO `photos` VALUES (116, 'WARU_CIATER', '30', '1', 'siteWARU_CIATER_cat30_slot1.jpg', NULL, NULL);
-INSERT INTO `photos` VALUES (117, 'WARU_CIATER', '30', '2', 'siteWARU_CIATER_cat30_slot2.jpg', NULL, NULL);
-INSERT INTO `photos` VALUES (118, 'WARU_CIATER', '27', '1', 'siteWARU_CIATER_cat27_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (114, '25IS11C0032', '24', '1', 'siteWARU_CIATER_cat24_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (115, '25IS11C0032', '29', '1', 'siteWARU_CIATER_cat29_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (116, '25IS11C0032', '30', '1', 'siteWARU_CIATER_cat30_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (117, '25IS11C0032', '30', '2', 'siteWARU_CIATER_cat30_slot2.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (118, '25IS11C0032', '27', '1', 'siteWARU_CIATER_cat27_slot1.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (119, 'KARANGTENGAH', '27', '1', 'siteKARANGTENGAH_cat27_slot1.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (120, 'KARANGTENGAH', '28', '1', 'siteKARANGTENGAH_cat28_slot1.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (121, 'KARANGTENGAH', '28', '2', 'siteKARANGTENGAH_cat28_slot2.jpg', NULL, NULL);
@@ -378,6 +378,36 @@ INSERT INTO `photos` VALUES (204, 'TGR294', '8', '2', 'siteTGR294_cat8_slot2.jpg
 INSERT INTO `photos` VALUES (205, 'TGR294', '7', '1', 'siteTGR294_cat7_slot1.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (207, 'TGR294', '9', '1', 'siteTGR294_cat9_slot1.jpg', NULL, NULL);
 INSERT INTO `photos` VALUES (208, 'TGR294', '9', '2', 'siteTGR294_cat9_slot2.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (209, 'TGR294', '9', '3', 'siteTGR294_cat9_slot3.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (210, 'PEJUANG_MEDAN_SATRIA_MT', '30', '1', 'sitePEJUANG_MEDAN_SATRIA_MT_cat30_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (211, 'PEJUANG_MEDAN_SATRIA_MT', '26', '3', 'sitePEJUANG_MEDAN_SATRIA_MT_cat26_slot3.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (212, 'PEJUANG_MEDAN_SATRIA_MT', '30', '2', 'sitePEJUANG_MEDAN_SATRIA_MT_cat30_slot2.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (213, 'PEJUANG_MEDAN_SATRIA_MT', '30', '3', 'sitePEJUANG_MEDAN_SATRIA_MT_cat30_slot3.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (216, 'JKB049', '4', '1', 'siteJKB049_cat4_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (217, 'JKB049', '5', '1', 'siteJKB049_cat5_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (218, 'JKB049', '3', '1', 'siteJKB049_cat3_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (219, 'JKB049', '3', '2', 'siteJKB049_cat3_slot2.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (220, 'JKB049', '3', '3', 'siteJKB049_cat3_slot3.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (221, 'JKB049', '3', '4', 'siteJKB049_cat3_slot4.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (223, 'KARANGTENGAH', '30', '5', 'siteKARANGTENGAH_cat30_slot5.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (224, 'KARANGTENGAH', '30', '6', 'siteKARANGTENGAH_cat30_slot6.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (225, 'MUCHTARRAYA', '30', '7', 'siteMUCHTARRAYA_cat30_slot7.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (226, 'MUCHTARRAYA', '30', '8', 'siteMUCHTARRAYA_cat30_slot8.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (227, 'PEJUANG_MEDAN_SATRIA_MT', '26', '4', 'sitePEJUANG_MEDAN_SATRIA_MT_cat26_slot4.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (228, 'PEJUANG_MEDAN_SATRIA_MT', '30', '4', 'sitePEJUANG_MEDAN_SATRIA_MT_cat30_slot4.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (229, 'PEJUANG_MEDAN_SATRIA_MT', '29', '2', 'sitePEJUANG_MEDAN_SATRIA_MT_cat29_slot2.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (230, 'PEJUANG_MEDAN_SATRIA_MT', '30', '5', 'sitePEJUANG_MEDAN_SATRIA_MT_cat30_slot5.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (231, 'CIOMAS', '30', '3', 'siteCIOMAS_cat30_slot3.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (232, '92143', '26', '1', 'site92143_cat26_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (233, 'JPX071', '30', '1', 'siteJPX071_cat30_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (234, 'JPX071', '27', '1', 'siteJPX071_cat27_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (235, 'CIPINANG_BESAR', '30', '4', 'siteCIPINANG_BESAR_cat30_slot4.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (236, 'CIPINANG_BESAR', '30', '5', 'siteCIPINANG_BESAR_cat30_slot5.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (237, 'CIPINANG_BESAR', '30', '6', 'siteCIPINANG_BESAR_cat30_slot6.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (238, 'JPX071', '29', '1', 'siteJPX071_cat29_slot1.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (239, 'JPX071', '30', '2', 'siteJPX071_cat30_slot2.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (240, 'JPX071', '29', '2', 'siteJPX071_cat29_slot2.jpg', NULL, NULL);
+INSERT INTO `photos` VALUES (241, 'JPX149', '1', '1', 'siteJPX149_cat1_slot1.jpg', NULL, NULL);
 
 -- ----------------------------
 -- Table structure for report_cells
@@ -476,7 +506,7 @@ CREATE TABLE `sites`  (
   `date_created` datetime NULL DEFAULT NULL,
   `date_modified` datetime NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 50 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 78 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sites
@@ -487,7 +517,7 @@ INSERT INTO `sites` VALUES (17, '', 'PULAU NANGKA BARAT', 'PULAU NANGKA BARAT', 
 INSERT INTO `sites` VALUES (18, '', 'Sang Hyang Indah', 'Sang Hyang Indah', 'Sang_Hyang_Indah', '', '', '', '', '', '', '', '', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
 INSERT INTO `sites` VALUES (19, '', 'Jalan Citra Indah', 'Jalan Citra Indah', 'SRG-04-300', '', '', '', '', '', '', '', '', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
 INSERT INTO `sites` VALUES (20, '', 'SITU SELA', 'SITU SELA', 'SITU_SELA', '', '', '', '', '', '', '', '', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
-INSERT INTO `sites` VALUES (21, '', 'SUKA NEGARA CIKUPA', 'SUKA NEGARA CIKUPA', 'SUKA_NEGARA_CIKUPA', '', '', '', '', '', '', '', '', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (21, 'TGR-04-187', 'SUKA NEGARA CIKUPA', 'SUKA NEGARA CIKUPA', '25IS11C0027', '', '', '', '', '', 'kp cibadak tegal rt002 rw001  Sukanegara Cikumpa Tangerang', '-6.21442', '106.49927', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
 INSERT INTO `sites` VALUES (22, '', 'SUKA BAKTI', 'SUKA BAKTI', 'SUKA_BAKTI', '', '', '', '', '', '', '', '', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
 INSERT INTO `sites` VALUES (23, '', 'TAMBANG PONCOL', 'TAMBANG PONCOL', 'TAMBANG_PONCOL', '', '', '', '', '', '', '', '', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
 INSERT INTO `sites` VALUES (24, '', 'KELAPA GADING TRADE CENTER', 'KELAPA GADING TRADE CENTER', 'KELAPA_GADING_TRADE_CENTER', '', '', '', '', '', '', '', '', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
@@ -497,13 +527,13 @@ INSERT INTO `sites` VALUES (27, '', 'KOMP SARIINTEN', 'KOMP SARIINTEN', 'KOMP_SA
 INSERT INTO `sites` VALUES (28, '', 'MUCHTARRAYA', 'MUCHTARRAYA', 'MUCHTARRAYA', '', '', '', '', '', '', '', '', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
 INSERT INTO `sites` VALUES (29, '', 'NANGGEWER', 'NANGGEWER', 'NANGGEWER', '', '', '', '', '', '', '', '', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
 INSERT INTO `sites` VALUES (30, '', 'SD CILEUNGSI NAROGONG', 'SD CILEUNGSI NAROGONG', 'NAROGONG', '', '', '', '', '', '', '', '', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
-INSERT INTO `sites` VALUES (31, '', 'PADEPOKAN MACAN', 'PADEPOKAN MACAN', 'PADEPOKAN_MACAN', '', '', '', '', '', 'PGGX+32C Ciakar, Kabupaten Tangerang, Banten', '-6.27482', '106.54752', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (31, 'TGR-04-863', 'PADEPOKAN MACAN', 'PADEPOKAN_MACAN (BUKITPANONGANHIJAU)	', '25IS11C0028', '', '', '', '', '', 'PGGX+32C Ciakar, Kabupaten Tangerang, Banten', '-6.27482', '106.54752', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
 INSERT INTO `sites` VALUES (32, '', 'PEJUANG_MEDAN_SATRIA_MT', 'PEJUANG_MEDAN_SATRIA_MT', 'PEJUANG_MEDAN_SATRIA_MT', '', '', '', '', '', '', '', '', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
 INSERT INTO `sites` VALUES (33, '', 'BOJONG NANGKA', 'BOJONG NANGKA', 'BOJONG_NANGKA', '', '', '', '', '', '', '', '', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
 INSERT INTO `sites` VALUES (34, '', 'BUNDARAN PNR', 'BUNDARAN PNR', 'BUNDARAN_PNR', '', '', '', '', '', '', '', '', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
 INSERT INTO `sites` VALUES (35, '', 'GANG HALI', 'GANG HALI', 'GANG_HALI', '', '', '', '', '', '', '', '', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
 INSERT INTO `sites` VALUES (36, '', 'GARUDA MUDA', 'GARUDA MUDA', 'GARUDA_MUDA', '', '', '', '', '42', 'KAMPUNG SANDING 2, RT. 14/RW. 07, NO 14 CICADAS GUNUNG PUTRI BOGOR 10310 JABODETABEK', '-6.4248', '106.9151', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
-INSERT INTO `sites` VALUES (37, '', 'WARU CIATER', 'WARU CIATER', 'WARU_CIATER', '', '', '', '', '', 'Jl. Waru, Kp. Maruga Rt.09 Rw.04 Kel. Ciater Kec. Serpong Kab. Tangerang, Banten', '-6.31542', '106.69823', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (37, '', 'WARU CIATER', 'WARU CIATER', '25IS11C0032', '', '', '', '', '', 'Jl. Waru, Kp. Maruga Rt.09 Rw.04 Kel. Ciater Kec. Serpong Kab. Tangerang, Banten', '-6.31542', '106.69823', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
 INSERT INTO `sites` VALUES (38, '', 'JL H MULUD KARANGTENGAH', 'JL H MULUD KARANGTENGAH', 'KARANGTENGAH', '', '', '', 'MONOPOLE', '36m', 'JL. H, NIBAN GANG H, MEAN, RT 2, RW. 2, KARANG TIMUR KEC. KARANG TENGAH, KOTA TANGERANG, BANTEN', '06.21784', '106.71548', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
 INSERT INTO `sites` VALUES (39, '', 'KOMPLEKDKS', 'KOMPLEKDKS', 'KOMPLEKDKS', '', '', '', '', '', '', '', '', 'PERKUATAN', 'JABODETABEB', 'PT TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
 INSERT INTO `sites` VALUES (40, '', 'CABAT MEDAN SATRIA', '', 'CABAT_MEDAN_SATRIA', '', '', '', '', '', '', '', '', 'PERKUATAN', 'JABODETABEB', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
@@ -516,5 +546,32 @@ INSERT INTO `sites` VALUES (46, '', 'JLARJUNAPAMULANG', 'JLARJUNAPAMULANG', 'CPT
 INSERT INTO `sites` VALUES (47, '', 'JLNBOJONGKEMUNING', 'JLNBOJONGKEMUNING', 'TGR294', '', '', '', 'SST', '32', 'Kp. Bojong RT. 001 RW. 002 Desa Kemuning kec. Legok Kab. Tangerang', ' -6.30151', '106.57513', 'B2S', 'JABODETABEB', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
 INSERT INTO `sites` VALUES (48, '', 'PERMANENCOMBATEDINBURG', 'PERMANENCOMBATEDINBURG', 'JKB049', '', '', '', 'SST', '32m', 'JL Pd Randu,. 005 RW. 002 Kelurahan Duri Kosambi Kecamatan Cengkareng Kota Jakarta barat Prov. Jakarta', '-6.17601', '106.72524', 'B2S', 'JABODETABEB', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
 INSERT INTO `sites` VALUES (49, '', 'RANCAKALAPAPANONGAN', 'RANCAKALAPAPANONGAN', 'TGR292', '', '', '', '3 leg', '72m', 'kp Panongan RT. 004/004 Kel. Panongan Kecamatan. Panongan Kab Tangerang Prov. Banten', '-6.279999', '106.520125', 'B2S', 'JABODETABEB', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (50, '', 'EMPANG MAS KARAWACI', 'EMPANG MAS KARAWACI', 'EMPANGMASKARAWACI', '', '', 'PT. Tritech Consult', '', '', '', '-6.16738795', '106.60339971111111', 'Perkuatan', '', '', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (51, '', 'PERUMGRIYA PERMATADMT', 'PERUMGRIYA PERMATADMT', 'PERUMGRIYAPERMATADMT', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (52, '', '', 'Universitasgunadarma', 'Universitasgunadarma', '', '', '', '', '', '', '', '', 'Perkuatan', '', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (53, 'DPK169', '25TS08U1454	', '3G KOBER PONDOK CINA', '25TS08U1454', '', '', '', '', '', '	Jl.Kober Gg.Kesadaran No. 24 RT.03 RW.05 Pondok Cina Beji Kota Depok', '-6.35960', '106.83700', 'Perkuatan', 'JABODETABEB	', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (54, '', '', 'GURAIT_MELATI', 'GURAIT_MELATI', '', '', '', 'Triangle', '51', 'JL.Gurait, Desa Melati,  Kab. Serang, Banten.', '-6.08057', '106.05598', 'Perkuatan', '', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (55, 'M00-JB-93263	25TS08N2499', '', 'LEMBAHBMMTR', 'LEMBAHBMMTR', '', '', '', '', '', 'Kp. Parung, RT. 02 RW. 11, Desa Bojong Kulur, Kec. Gunung Putri, Kab. Bogor', '-6.33411', '106.96949', 'Perkuatan', 'JABODETABEB', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (56, 'CBI-04-630	25TS08U1422', '', 'PERMANENCOMBAT PABUARANTAJUR', 'PERMANENCOMBATPABUARANTAJUR', '', '', '', '', '', 'Kp.Dukuh RT.03/02 Desa Pasir Mukti Ds Pasir Mukti Citeureup Bogor', '-6.50710', '106.89465', 'Perkuatan', 'JABODETABEB', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (57, '', '', 'RANCABUNGUR_DUA', 'RANCABUNGUR_DUA', '', '', '', 'SST', '42', 'Kp Wates Kaum RT 03, RW 02 desa rancabungur, Kab Bogor, Jabar.', '-6.53995', '106.71136', 'Perkuatan', '', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (58, '', '', 'SEMPERTIMUR', 'SEMPERTIMUR', '', '', '', '', '', '', '', '', 'Perkuatan', '', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (59, '', '', 'PLRATUSUKABUMI', 'PLRATUSUKABUMI', '', '', '', 'SST', '42', 'JL.Cipatuguran BTN Ratu Indah RT 01 RW 33 Kelurahan Pelabuhan Ratu Kecamatan Pelabuhan Ratu, Kab Sukabumi, Jabar.', '-7.00551', '106.5457', 'Perkuatan', '', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (60, 'DPK660', '', 'JUANDACISALAK DEPOKMD', '25TS08U1401', '', '', '', '', '', 'JL. IR H. JUANDA NO.8, BAKTI JAYA, KEC. Bakti Jaya Sukma Jaya Depok', '-6.38069', '106.85572', 'Perkuatan', 'JABODETABEB', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (61, 'DPK-04-222', '', 'PJATICINEREM', '25TS08N2434', '', '', '', '', '', 'Pangkalan Jati Baru, Kota Depok.', '-6.32852', '106.79978', 'Perkuatan', 'JABODETABEB', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (62, 'TNG002', '', 'BATUCEPER', '25TS08U0654', '', '', '', '', '', 'Kebon Besar, Kota Tangerang, Banten', '-6.16171', '106.68022', 'Perkuatan', 'JABODETABEB', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (63, '', '', 'Jalan Layur Mc-D-GF', 'JalanLayurMcDGF', '', '', '', 'MCP', '20', 'JL.Layur, Kel Jati, Kec Pulogadung, Jaktim.', '-6.20051', '106.89726', 'Perkuatan', '', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (64, '', '', 'KEPUSELATAN', 'KEPUSELATAN', '', '', '', 'Pole ', '8', 'JL.Kepu Selatan Kel,Kemayoran Kec Kemayoran, Jakpus.', '-6.16826', '106.84493', 'Perkuatan', '', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (65, 'TNG-04-102', '', 'PERMANENTMODERNGOLFTANGERANG', '25TS09U0204', '', '', '', '', '', '- KEL. KELAPA INDAH  Kelapa Indah Tangerang, Banten', '-6.20346', '106.65254', 'Perkuatan', 'JABODETABEB', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (66, '', '', 'PESONA_KAHURIPAN_GARUDA_MT', 'PESONA_KAHURIPAN_GARUDA_MT', '', '', '', '', '', 'Pesona Kahuripan RT.004 RW.018 Cikahurip, Bogor', '-6.45820', '106.97824', 'Perkuatan', '', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (67, '', '', 'SUKANAGARA_CIKUPA_MT', 'SUKANAGARA_CIKUPA_MT', '', '', '', '', '', '', '', '', 'Perkuatan', '', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (68, '', '', 'jkt_3121', 'jkt_3121', '', '', '', 'Pole MCP', '20 ', ' JL.Madrasah no 3, RT 3/RW 9 Kel.Pekayon, Kec Pasar Rebo, Jaktim', '-6.34287', '106.86188', 'Perkuatan', '', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (69, '', '', 'Garuda_Muda_Dua', 'Garuda_Muda_Dua', '', '', '', '', '', '', '', '', 'Perkuatan', '', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (71, 'M00-BT-105092', '', 'PERUMGRIYAPERMATADMT', '25TS07N0717', '', '', '', '', '', 'KP. PETIR PULU RT. 13 RW.03-DURI KOSAMBI, CENGKARENG-11750-TANGERANG BANTEN', '-6.18182', '106.71317', 'Perkuatan', 'JABODETABEB', 'PT. TRITECH CONSULT', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (72, 'DPK486', '', '3G MARKAS BRIMOB KELAPA DUA (UNIVERSITASGUNADARMA)', '25TS08U1455', '', '', '', '', '', 'Jl.Akses UI 41 RT.08 RW.09 Tugu Cimanggis, Kota Depok', '-6.35500', '106.84730', 'Perkuatan', 'JABODETABEB', '', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (73, '', '', 'SEMPERTIMUR', 'JAW-JK-TJP-0048', '', '', '', 'Monopole', '36', 'JL.KEMBANTENANIINO.RT4/4.Semper Tim, Kec.Cilincing, Kota Jkt Utara, Jakarta, 14130', '-6.1104', '106.92947', 'Perkuatan', 'JABODETABEB	', '', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (74, '', '', 'RELOC LEUSER', 'JSX644', '', '', '', '', '', '', '', '', 'Perkuatan', '', '', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (75, '25TS12Z0121', '', 'RELOCKEDUBESAUSTRIADMT', 'JPX071', '', '', '', '', '', '', '-6.201111', '106.838371', 'Perkuatan', '', '', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (76, '', '', 'TAMAN BAMBU', 'TAMANBAMBU', '', '', '', '', '', '', '', '', 'Perkuatan', '', '', '', '', '', '', '', '', '', NULL, NULL, NULL);
+INSERT INTO `sites` VALUES (77, '25TS12B0103', '', 'KALIBARUBARATDMT', 'JPX149', '', '', '', 'Monopole', '20', 'Jln. Bungur Besar Raya No. 131 RT01/01, Kel. Kemayoran , Kec. Bungur Jakarta Pusat', '-6.17043', '106.84382', 'B2S', '', '', '', '', '', '', '', '', '', NULL, NULL, NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;
