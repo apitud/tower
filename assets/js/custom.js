@@ -77,11 +77,13 @@ $(document).on('click', '.row-site', function () {
                         '.paste-slot[data-category="' + photo.category_id + '"][data-slot="' + photo.slot + '"]';
 
                     let slot = $(selector);
-
+                    let imageUrl = base_url + '/tower/assets/uploads/site_photos/' + photo.file_path;
                     slot.find('img').attr(
                         'src',
                         base_url + '/tower/assets/uploads/site_photos/' + photo.file_path
                     ).show();
+                    slot.find('a.lightbox-link')
+                        .attr('href', imageUrl);
                     slot.find('p').hide();
                     slot.addClass('success');
 
@@ -92,6 +94,12 @@ $(document).on('click', '.row-site', function () {
         });
 
     }
+    $(document).on('click', '.paste-slot img', function () {
+        let src = $(this).attr('src');
+
+        $('#imagePreviewModal img').attr('src', src);
+        $('#imagePreviewModal').modal('show');
+    });
 
     $(document).on('click', '.btn-delete-photo', function (e) {
 
@@ -292,7 +300,11 @@ function handlePasteImage(file) {
     let formData = new FormData();
     let site_id = $('#site_id').val();
 
-    formData.append("image", file);
+    const imageFile = new File([file], "clipboard.png", {
+        type: file.type || "image/png"
+    });
+
+    formData.append("image", imageFile);
     formData.append("site_id", site_id);
     formData.append("category_id", currentSlot.data('category'));
     formData.append("slot", currentSlot.data('slot'));
@@ -306,7 +318,7 @@ function handlePasteImage(file) {
         contentType: false,
 
         success: function (res) {
-
+console.log(res);
             currentSlot.removeClass('uploading');
             currentSlot.find('.spinner').hide();
 

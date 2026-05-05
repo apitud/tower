@@ -746,4 +746,15 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-let table = new DataTable('.tabledata');
+let table = new DataTable('.tabledata', {
+  layout: {
+    topStart: {
+      buttons: [
+        {
+          extend: 'excelHtml5',
+          text: 'Export Excel'
+        }
+      ]
+    }
+  }
+});

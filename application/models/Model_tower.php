@@ -80,7 +80,7 @@ class Model_tower extends CI_Model
             section.id
             ) c ON c.pekerjaan = a.pekerjaan
             AND c.site_id = b.site_id
-            GROUP BY b.id
+    GROUP BY b.id
     ")->result_array();
     }
 

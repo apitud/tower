@@ -48,5 +48,9 @@
   <!-- responsive CSS
 		============================================ -->
   <link rel="stylesheet" href="<?= base_url('assets/') ?>css/responsive.css?time=<?= time() ?>">
+  <link rel="stylesheet" href="<?= base_url('assets/') ?>css/lightbox.css?time=<?= time() ?>">
+  <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.0.1/css/buttons.dataTables.css">
+
+
   <link rel="stylesheet" href="<?= base_url('assets/') ?>css/custom.css?time=<?= time() ?>">
 </head>

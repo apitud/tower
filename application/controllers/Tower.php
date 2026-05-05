@@ -271,38 +271,150 @@ class Tower extends CI_Controller {
 		echo json_encode($photos);
 	}
 
+	// public function upload_photo()
+	// {
+	// 	ini_set('display_errors', 1);
+	// 	ini_set('display_startup_errors', 1);
+	// 	error_reporting(E_ALL);
+	// 	print_r($_FILES);
+	// 	$site_id = $this->input->post('site_id');
+	// 	$category_id = $this->input->post('category_id');
+	// 	$slot = $this->input->post('slot');
+
+	// 	$path = FCPATH . './assets/uploads/site_photos/';
+
+	// 	if (!is_dir($path)) {
+	// 		mkdir($path, 0777, true);
+	// 	}
+
+	// 	$filename = 'site' . $site_id . '_cat' . $category_id . '_slot' . $slot . '.jpg';
+
+	// 	$config['upload_path']   = $path;
+	// 	$config['allowed_types'] = '*';
+	// 	$config['file_name']     = $filename;
+	// 	$config['overwrite']     = true;
+	// 	var_dump($config['file_name']);
+	// 	die;
+	// 	$this->load->library('upload', $config);
+
+	// 	if ($this->upload->do_upload('image')) {
+
+	// 		$data = [
+	// 			'site_id' => $site_id,
+	// 			'category_id' => $category_id,
+	// 			'slot' => $slot,
+	// 			'file_path' => $filename
+	// 		];
+
+	// 		$cek = $this->db->get_where('photos', [
+	// 			'site_id' => $site_id,
+	// 			'category_id' => $category_id,
+	// 			'slot' => $slot
+	// 		])->row();
+
+	// 		if ($cek) {
+	// 			$this->db->where('id', $cek->id);
+	// 			$this->db->update('photos', [
+	// 				'file_path' => $filename
+	// 			]);
+	// 		} else {
+	// 			$this->db->insert('photos', $data);
+	// 		}
+
+	// 		echo json_encode(['status' => 'success']);
+	// 	} else {
+
+	// 		// 🔥 ambil error detail dari CI Upload
+	// 		$error = $this->upload->display_errors('', '');
+
+	// 		echo json_encode([
+	// 			'status' => 'error',
+	// 			'message' => $error
+	// 		]);
+	// 	}
+	// }
+
 	public function upload_photo()
 	{
+		ini_set('display_errors', 1);
+		ini_set('display_startup_errors', 1);
+		error_reporting(E_ALL);
+	
+		$site_id     = trim($this->input->post('site_id'));
+		$category_id = trim($this->input->post('category_id'));
+		$slot        = trim($this->input->post('slot'));
 
-		$site_id = $this->input->post('site_id');
-		$category_id = $this->input->post('category_id');
-		$slot = $this->input->post('slot');
-
-
-
-		$path = './assets/uploads/site_photos/';
-
-		if (!is_dir($path)) {
-			mkdir($path, 0777, true);
+		if (empty($_FILES['image']['name'])) {
+			echo json_encode([
+				'status' => 'error',
+				'message' => 'File tidak ditemukan'
+			]);
+			return;
 		}
 
-		$filename = 'site' . $site_id . '_cat' . $category_id . '_slot' . $slot . '.jpg';
+		$path = FCPATH . 'assets/uploads/site_photos/';
 
-		$config['upload_path'] = $path;
-		$config['allowed_types'] = 'jpg|jpeg|png';
-		$config['file_name'] = $filename;
-		$config['overwrite'] = true;
+		if (!is_dir($path)) {
+			mkdir($path, 0777,
+				true
+			);
+		}
 
-		$this->load->library('upload', $config);
+		// sanitize
+		$site_id = preg_replace('/[^A-Za-z0-9_-]/', '_',
+				$site_id
+			);
+
+		// ambil ext asli
+		$ext = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
+
+		$filename = 'site' . $site_id . '_cat' . $category_id . '_slot' . $slot . '.' . $ext;
+
+		$config = [
+			'upload_path'   => $path,
+			'allowed_types' => 'jpg|jpeg|png',
+			'file_name'     => $filename,
+			'overwrite'     => true,
+			'remove_spaces' => true
+		];
+
+		$this->load->library('upload');
+		$this->upload->initialize($config);
 
 		if ($this->upload->do_upload('image')) {
+			$upload_data = $this->upload->data();
+
+			// Resize
+			$this->load->library('image_lib');
+
+			$resize_config = [
+				'image_library'  => 'gd2',
+				'source_image'   => $upload_data['full_path'],
+				'maintain_ratio' => true,
+				'width'          => 1280,
+				'height'         => 1280,
+				'quality'        => '80%'
+			];
+
+			$this->image_lib->initialize($resize_config);
+
+			if (!$this->image_lib->resize()) {
+				echo json_encode([
+					'status' => 'error',
+					'message' => $this->image_lib->display_errors('', '')
+				]);
+				return;
+			}
+
+			$this->image_lib->clear();
 
 			$data = [
-				'site_id' => $site_id,
+				'site_id'     => $site_id,
 				'category_id' => $category_id,
-				'slot' => $slot,
-				'file_path' => $filename
+				'slot'        => $slot,
+				'file_path'   => $filename
 			];
+		
 
 			$cek = $this->db->get_where('photos', [
 				'site_id' => $site_id,
@@ -311,20 +423,30 @@ class Tower extends CI_Controller {
 			])->row();
 
 			if ($cek) {
-				// update
 				$this->db->where('id', $cek->id);
 				$this->db->update('photos', [
 					'file_path' => $filename
 				]);
 			} else {
-				// insert
 				$this->db->insert('photos', $data);
 			}
 
-			echo json_encode(['status' => 'success']);
+			echo json_encode([
+				'status' => 'success',
+				'file' => $filename
+			]);
 		} else {
 
-			echo json_encode(['status' => 'error']);
+			echo json_encode([
+				'status' => 'error',
+				'message' => $this->upload->display_errors('', ''),
+				'debug' => [
+					'upload_path' => $path,
+					'is_writable' => is_writable($path),
+					'filename' => $filename,
+					'file_info' => $_FILES['image']
+				]
+			]);
 		}
 	}
 
@@ -362,6 +484,7 @@ class Tower extends CI_Controller {
 
 	public function generate_report($site_id)
 	{
+		$this->fix_all_photos();
 		// ambil data site
 		$site = $this->db
 			->get_where('sites', ['site_id' => $site_id])
@@ -450,7 +573,25 @@ class Tower extends CI_Controller {
 			$drawing = new Drawing();
 			$drawing->setPath($imagePath);
 			$drawing->setCoordinates($cell);
-			$drawing->setHeight(300);
+
+			// deteksi ukuran gambar
+			list($imgWidth, $imgHeight) = getimagesize($imagePath);
+
+			if ($imgHeight > $imgWidth) {
+				// portrait
+				$drawing->setHeight(290);
+				$drawing->setOffsetX(70);
+				$drawing->setOffsetY(10);
+			} else {
+				// landscape
+				$drawing->setWidth(280);
+				$drawing->setOffsetY(100);
+				$drawing->setOffsetX(10);
+			}
+
+			// geser posisi
+		
+
 			$drawing->setWorksheet($sheet);
 		}
 
@@ -480,6 +621,67 @@ class Tower extends CI_Controller {
 			->row();
 
 		return $cell->cell ?? 'A1';
+	}
+
+	public function fix_all_photos()
+	{
+		$photos = $this->db->get('photos')->result();
+
+		foreach ($photos as $p) {
+
+			$imagePath = FCPATH . 'assets/uploads/site_photos/' . $p->file_path;
+
+			if (!file_exists($imagePath)) continue;
+
+			$this->fixImageOrientation($imagePath);
+		}
+
+		// echo "DONE FIX ALL PHOTOS";
+	}
+	private function fixImageOrientation($filename)
+	{
+		if (!function_exists('exif_read_data')) return;
+
+		$exif = @exif_read_data($filename);
+		if (!$exif || !isset($exif['Orientation'])) return;
+
+		$orientation = $exif['Orientation'];
+
+		// detect type
+		$info = getimagesize($filename);
+		$mime = $info['mime'];
+
+		switch ($mime) {
+			case 'image/jpeg':
+				$image = imagecreatefromjpeg($filename);
+				break;
+			case 'image/png':
+				$image = imagecreatefrompng($filename);
+				break;
+			default:
+				return;
+		}
+
+		switch ($orientation) {
+			case 3:
+				$image = imagerotate($image, 180, 0);
+				break;
+			case 6:
+				$image = imagerotate($image, -90, 0);
+				break;
+			case 8:
+				$image = imagerotate($image, 90, 0);
+				break;
+			default:
+				return;
+		}
+
+		// save ulang
+		if ($mime == 'image/jpeg') {
+			imagejpeg($image, $filename, 90);
+		} else {
+			imagepng($image, $filename);
+		}
 	}
 
 

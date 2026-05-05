@@ -19,9 +19,13 @@
  <script src="https://cdn.datatables.net/2.3.7/js/dataTables.bootstrap5.min.js"></script>
  <script src="https://cdn.datatables.net/responsive/3.0.8/js/dataTables.responsive.min.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+ <script src="https://cdn.datatables.net/buttons/3.0.1/js/dataTables.buttons.js"></script>
+ <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.html5.js"></script>
  <!-- main JS
 		============================================ -->
  <script src="<?= base_url('assets/') ?>js/main.js?time=<?= time() ?>"></script>
+ <script src="<?= base_url('assets/') ?>js/lightbox.js?time=<?= time() ?>"></script>
  <script src="<?= base_url('assets/') ?>js/custom.js?time=<?= time() ?>"></script>
  </body>
 

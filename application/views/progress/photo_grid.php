@@ -23,13 +23,14 @@
                     <div class="col-md-2">
 
                         <div class="paste-slot" data-category="<?= $cat['id'] ?>" data-slot="<?= $i ?>">
-
                             <p><?= $cat['name'] ?> <?= $i ?></p>
                             <div class="spinner"></div>
-                            <img>
-                            <button class="btn-delete-photo">
-                                ✕
-                            </button>
+
+                            <a href="" data-lightbox="site-photos" class="lightbox-link">
+                                <img style="display:none;">
+                            </a>
+
+                            <button class="btn-delete-photo">✕</button>
                         </div>
 
                     </div>
